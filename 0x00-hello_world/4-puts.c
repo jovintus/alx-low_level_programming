@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+
+/**
+ *main- starts the code
+ *Description: puts "Programming is like bulding a multilingual puzzle"
+ *Return 0
+ */
+
 int main(void)
 {
 
