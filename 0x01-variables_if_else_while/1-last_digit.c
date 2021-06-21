@@ -1,25 +1,31 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
 /**
- * main - main block
- * Description: prints all single digit numbers of base 10
- * starting from 0, followed by a new line.
- * Return: 0
+ * main - Entry point for random number checker
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int c = 0;
+	int n;
+	int last;
 
-	while (c < 10)
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	last = n % 10;
+	if (last > 5)
 	{
-		putchar(48 + c);
-		if (c != 9)
-		{
-			putchar(',');
-			putchar(' ');
-		}
-		c++;
+		printf("Last digit of %d is %d and is greater than 5\n", n, last);
 	}
-	putchar('\n');
+	else if (last == 0)
+	{
+		printf("Last digit of %d is %d and is 0\n", n, last);
+	}
+	else if (last < 6)
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
+	}
 	return (0);
 }
