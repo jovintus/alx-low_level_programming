@@ -7,14 +7,10 @@
  */
 void _puts(char *str)
 {
-	int v = 0;
-
-	while (v >= 0)
+	int i=0;
+	while (str[i] != '\n' && s[i] != '\0')
 	{
-		if (*(str + v) == '\0')
-			break;
-		putchar(*(str + v));
-		v++;
+	   putchar(str[i]);
+	   i++
 	}
-	putchar('\n');
 }
