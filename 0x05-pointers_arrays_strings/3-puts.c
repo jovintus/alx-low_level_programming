@@ -13,8 +13,8 @@ void _puts(char *str)
 	{
 		if (*(str + v) == '\0')
 			break;
-		_putchar(*(str + v));
+		putchar(*(str + v));
 		v++;
 	}
-	_putchar('\n');
+	putchar('\n');
 }
