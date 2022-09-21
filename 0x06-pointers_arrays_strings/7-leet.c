@@ -8,21 +8,19 @@
 
 char *leet(char *s)
 {
-	int i;
+	int let1 = 0, let2;
+	char leet[5] = {'a', 'e', 'o', 't', 'l'};
+	char code[5] = {'4', '3', '0', '7', '1'};
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (; *(s + let1) != '\0'; let1++)
 	{
-		while (s[i] == 'a' || s[i] == 'A')
-			s[i] = '4';
-		while (s[i] == 'e' || s[i] == 'E')
-			s[i] = '3';
-		while (s[i] == 'o' || s[i] == 'O')
-			s[i] = '0';
-		while (s[i] == 't' || s[i] == 'T')
-			s[i] = '7';
-		while (s[i] == 'l' || s[i] == 'L')
-			s[i] = '1';
+		for (let2 = 0; let2 < 5; let2++)
+		{
+			if (*(s + let1) == *(leet + let2) || *(s + let1) == *(leet + let2) - 32)
+			{
+				*(s + let1) = *(code + let2);
+			}
+		}
 	}
-
 	return (s);
 }
